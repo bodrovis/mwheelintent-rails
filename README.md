@@ -1,4 +1,5 @@
 # jQuery MouseWheel Intent plugin for Rails
+[![Gem Version](https://badge.fury.io/rb/mwheelintent-rails.png)](http://badge.fury.io/rb/mwheelintent-rails)
 
 A ruby gem that uses the Rails asset pipeline to include the jQuery MouseWheel Intent plugin by trixta.
 
