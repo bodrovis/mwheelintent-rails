@@ -1,6 +1,6 @@
 /**
- * @author trixta
- * @version 1.2
+ * @author trixta and bodrovis
+ * @version 1.3
  */
 (function($){
     var mwheelI = {
