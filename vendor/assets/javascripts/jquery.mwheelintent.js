@@ -3,7 +3,6 @@
  * @version 1.2
  */
 (function($){
-
     var mwheelI = {
             pos: [-260, -260]
         },
@@ -23,24 +22,25 @@
     }
 
     $.event.special.mwheelIntent = {
-        setup: function(){
-            var jElm = $(this).bind('mousewheel', $.event.special.mwheelIntent.handler);
+        setup: function() {
+            var jElm = $(this).on('mousewheel', $.event.special.mwheelIntent.handler);
             if( this !== doc && this !== root && this !== body ){
-                jElm.bind('mouseleave', unsetPos);
+                jElm.on('mouseleave', unsetPos);
             }
             jElm = null;
             return true;
         },
         teardown: function(){
             $(this)
-                .unbind('mousewheel', $.event.special.mwheelIntent.handler)
-                .unbind('mouseleave', unsetPos)
+                .off('mousewheel', $.event.special.mwheelIntent.handler)
+                .off('mouseleave', unsetPos)
             ;
             return true;
         },
-        handler: function(e, d){
+        handler: function(e, d) {
             var pos = [e.clientX, e.clientY];
-            if( this === mwheelI.elem || Math.abs(mwheelI.pos[0] - pos[0]) > minDif || Math.abs(mwheelI.pos[1] - pos[1]) > minDif ){
+            if( this === mwheelI.elem || Math.abs(mwheelI.pos[0] - pos[0]) > minDif ||
+                Math.abs(mwheelI.pos[1] - pos[1]) > minDif ) {
                 mwheelI.elem = this;
                 mwheelI.pos = pos;
                 minDif = 250;
@@ -58,19 +58,20 @@
             }
         }
     };
+
     $.fn.extend({
         mwheelIntent: function(fn) {
-            return fn ? this.bind("mwheelIntent", fn) : this.trigger("mwheelIntent");
+            return fn ? this.on("mwheelIntent", fn) : this.trigger("mwheelIntent");
         },
 
         unmwheelIntent: function(fn) {
-            return this.unbind("mwheelIntent", fn);
+            return this.off("mwheelIntent", fn);
         }
     });
 
     $(function(){
         body = doc.body;
         //assume that document is always scrollable, doesn't hurt if not
-        $(doc).bind('mwheelIntent.mwheelIntentDefault', $.noop);
+        $(doc).on('mwheelIntent.mwheelIntentDefault', $.noop);
     });
 })(jQuery);
