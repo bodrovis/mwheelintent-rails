@@ -25,7 +25,7 @@ NOTE: this is a jQuery plugin so you will also need the `jquery-rails` gem:
 
 In your `application.js` you will need to add this line:
 
-    //= require mwheelintent
+    //= require jquery.mwheelintent
 
 ## Contributing
 
