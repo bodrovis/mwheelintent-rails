@@ -15,6 +15,7 @@ plugin by trixta."
   gem.name          = "mwheelintent-rails"
   gem.require_paths = ["lib"]
   gem.version       = MWheelIntent::Rails::VERSION
+  gem.license       = 'MIT'
   
   gem.add_dependency "railties", "~> 3.1"
 end
