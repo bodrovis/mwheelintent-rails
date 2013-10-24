@@ -17,5 +17,5 @@ plugin by trixta."
   gem.version       = MWheelIntent::Rails::VERSION
   gem.license       = 'MIT'
   
-  gem.add_dependency "railties", "~> 3.1"
+  gem.add_dependency "railties", ">= 3.1"
 end
