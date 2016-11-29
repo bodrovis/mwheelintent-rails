@@ -39,4 +39,4 @@ In your `application.js` you will need to add this line:
 
 This plugin is licensed under the [MIT License](https://github.com/bodrovis/RadiantScroller/blob/master/LICENSE).
 
-Copyright (c) 2014 [Ilya Bodrov](http://radiant-wind.com)
+Copyright (c) 2016 [Ilya Bodrov](http://bodrovis.tech)
